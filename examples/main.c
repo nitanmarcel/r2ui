@@ -2,12 +2,14 @@
 #include "r2ui.h"
 
 static bool checked = false;
+static int choice = 0;
 
 static void main_run(RCore *core) {
 	R2UI *ui = r2ui_new (core->cons);
 	ui->theme.frame_color = Color_RED;
 	ui->theme.checkbox_color = Color_YELLOW;
 	ui->theme.button_color = Color_BLUE;
+	ui->theme.radio_button_color = Color_GREEN;
 	if (!ui) {
 		return;
 	}
@@ -17,6 +19,9 @@ static void main_run(RCore *core) {
 		r2ui_text (ui, Color_GREEN "Hello from r2ui!" Color_RESET);
 		r2ui_separator (ui);
 		r2ui_checkbox (ui, "Checkbox", &checked);
+		r2ui_radio_button (ui, "Option A", &choice, 0);
+		r2ui_radio_button (ui, "Option B", &choice, 1);
+		r2ui_radio_button (ui, "Option C", &choice, 2);
 		r2ui_separator (ui);
 		if (r2ui_button (ui, "Quit")) {
 			r2ui_stop (ui);
