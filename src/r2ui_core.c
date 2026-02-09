@@ -10,6 +10,7 @@ R2UI_API R2UI *r2ui_new(RCons *cons) {
 	}
 	ui->cons = cons;
 	ui->running = true;
+	r_cons_enable_mouse (cons, true);
 	return ui;
 }
 
@@ -17,6 +18,7 @@ R2UI_API void r2ui_free(R2UI *ui) {
 	if (!ui) {
 		return;
 	}
+	r_cons_enable_mouse (ui->cons, false);
 	free (ui);
 }
 
@@ -25,7 +27,19 @@ R2UI_API bool r2ui_begin(R2UI *ui) {
 		return false;
 	}
 
-	ui->last_key = r_cons_readchar_timeout (ui->cons, 50);
+	int key = r_cons_readchar_timeout (ui->cons, 50);
+	
+	if (key != -1) {
+		key = r_cons_arrow_to_hjkl (ui->cons, key);
+	}
+
+	ui->last_key = key;
+	
+	ui->click_x = -1;
+	ui->click_y = -1;
+	r_cons_get_click (ui->cons, &ui->click_x, &ui->click_y);
+	if (ui->click_x > 0) ui->click_x--;
+	if (ui->click_y > 0) ui->click_y--;
 
 	ui->th = 0;
 	ui->tw = r_cons_get_size (ui->cons, &ui->th);

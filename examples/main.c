@@ -11,8 +11,10 @@ static void main_run(RCore *core) {
 	while (r2ui_begin (ui)) {
 		r2ui_text (ui, Color_GREEN "Hello from r2ui!" Color_RESET);
 		r2ui_separator (ui);
-		r2ui_text (ui, "Press ESC or Ctrl+C to quit");
-		if (r2ui_key_pressed (ui, R2UI_KEY_CTRL_C) || r2ui_key_pressed (ui, R2UI_KEY_ESC)) {
+		if (r2ui_button (ui, "Quit")) {
+			r2ui_stop (ui);
+		}
+		if (r2ui_key_pressed (ui, R2UI_KEY_CTRL_C) || r2ui_key_pressed (ui, R2UI_KEY_Q)) {
 			r2ui_stop (ui);
 		}
 		r2ui_end (ui);

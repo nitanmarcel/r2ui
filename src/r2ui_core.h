@@ -5,6 +5,7 @@
 
 typedef struct r2ui_theme_t {
 	const char *frame_color;
+	const char *button_color;
 } R2UITheme;
 
 typedef struct r2ui_t {
@@ -15,6 +16,8 @@ typedef struct r2ui_t {
 	int last_key;
 	int layout_x;
 	int layout_y;
+	int click_x;
+	int click_y;
 	bool running;
 	R2UITheme theme;
 } R2UI;

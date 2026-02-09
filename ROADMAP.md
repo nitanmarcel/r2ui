@@ -1,7 +1,7 @@
 - [x] Text
 - [x] Separator
 - [ ] InputText
-- [ ] Button
+- [x] Button
 - [ ] Selectable
 - [ ] ListBox
 - [ ] Checkbox
