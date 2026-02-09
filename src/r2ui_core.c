@@ -41,6 +41,7 @@ R2UI_API bool r2ui_begin(R2UI *ui) {
 		ui->running = false;
 		return false;
 	}
+	ui->can->color = ui->cons->context->color_mode;
 
 	r_cons_canvas_fill (ui->can, 0, 0, ui->tw, ui->th, ' ');
 	r_cons_canvas_box (ui->can, 0, 0, ui->tw, ui->th, NULL);
