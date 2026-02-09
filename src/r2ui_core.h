@@ -12,6 +12,7 @@ typedef struct r2ui_t {
 	int layout_x;
 	int layout_y;
 	bool running;
+	const char *frame_color;
 } R2UI;
 
 #endif
