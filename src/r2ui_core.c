@@ -45,6 +45,9 @@ R2UI_API bool r2ui_begin(R2UI *ui) {
 	r_cons_canvas_fill (ui->can, 0, 0, ui->tw, ui->th, ' ');
 	r_cons_canvas_box (ui->can, 0, 0, ui->tw, ui->th, NULL);
 
+	ui->layout_x = 1;
+	ui->layout_y = 1;
+
 	return ui->running;
 }
 

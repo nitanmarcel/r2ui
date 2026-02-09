@@ -9,6 +9,8 @@ typedef struct r2ui_t {
 	int tw;
 	int th;
 	int last_key;
+	int layout_x;
+	int layout_y;
 	bool running;
 } R2UI;
 

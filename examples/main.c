@@ -8,6 +8,7 @@ static void main_run(RCore *core) {
 	}
 
 	while (r2ui_begin (ui)) {
+		r2ui_text (ui, "Hello from r2ui!");
 		if (r2ui_key_pressed (ui, R2UI_KEY_CTRL_C) || r2ui_key_pressed (ui, R2UI_KEY_ESC)) {
 			r2ui_stop (ui);
 		}

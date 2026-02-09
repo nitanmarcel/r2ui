@@ -1,4 +1,4 @@
-- [ ] Text
+- [x] Text
 - [ ] Separator
 - [ ] InputText
 - [ ] Button
