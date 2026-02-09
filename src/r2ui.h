@@ -24,6 +24,9 @@ R2UI_API bool r2ui_checkbox(R2UI *ui, const char *label, bool *checked);
 R2UI_API bool r2ui_radio_button(R2UI *ui, const char *label, int *value, int option);
 R2UI_API bool r2ui_selectable(R2UI *ui, const char *label, bool selected);
 R2UI_API void r2ui_progress_bar(R2UI *ui, float fraction);
+R2UI_API bool r2ui_tab_bar_begin(R2UI *ui, int *active);
+R2UI_API bool r2ui_tab_item(R2UI *ui, const char *label, int index);
+R2UI_API void r2ui_tab_bar_end(R2UI *ui);
 R2UI_API void r2ui_stop(R2UI *ui);
 
 #endif

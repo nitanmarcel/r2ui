@@ -10,6 +10,7 @@ typedef struct r2ui_theme_t {
 	const char *radio_button_color;
 	const char *selectable_color;
 	const char *progress_bar_color;
+	const char *tab_bar_color;
 } R2UITheme;
 
 typedef struct r2ui_t {
@@ -22,6 +23,9 @@ typedef struct r2ui_t {
 	int layout_y;
 	int click_x;
 	int click_y;
+	int tab_bar_y;
+	int tab_header_x;
+	int *tab_active;
 	bool running;
 	R2UITheme theme;
 } R2UI;

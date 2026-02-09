@@ -6,6 +6,7 @@ static bool checked = false;
 static int choice = 0;
 static bool selected = false;
 static float progress = 0.0f;
+static int tab = 0;
 
 static void main_run(RCore *core) {
 	R2UI *ui = r2ui_new (core->cons);
@@ -15,6 +16,7 @@ static void main_run(RCore *core) {
 	ui->theme.radio_button_color = Color_GREEN;
 	ui->theme.selectable_color = Color_CYAN;
 	ui->theme.progress_bar_color = Color_MAGENTA;
+	ui->theme.tab_bar_color = Color_CYAN;
 	if (!ui) {
 		return;
 	}
@@ -36,6 +38,19 @@ static void main_run(RCore *core) {
 		progress += 0.01f;
 		if (progress > 1.0f) {
 			progress = 0.0f;
+		}
+		r2ui_separator (ui);
+		if (r2ui_tab_bar_begin (ui, &tab)) {
+			if (r2ui_tab_item (ui, "Widgets", 0)) {
+				r2ui_text (ui, "This is the Widgets tab");
+			}
+			if (r2ui_tab_item (ui, "Info", 1)) {
+				r2ui_text (ui, "This is the Info tab");
+			}
+			if (r2ui_tab_item (ui, "About", 2)) {
+				r2ui_text (ui, "r2ui demo application");
+			}
+			r2ui_tab_bar_end (ui);
 		}
 		r2ui_separator (ui);
 		if (r2ui_button (ui, "Quit")) {

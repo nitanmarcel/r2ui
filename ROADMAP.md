@@ -5,7 +5,7 @@
 - [x] Selectable
 - [x] Checkbox
 - [x] RadioButton
-- [ ] TabBar / TabItem
+- [x] TabBar / TabItem
 - [x] ProgressBar
 - [ ] Panels
 - [ ] Line / Arrow
