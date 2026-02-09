@@ -6,7 +6,7 @@ R2UI_API bool r2ui_button(R2UI *ui, const char *label) {
 	}
 	int x = ui->layout_x;
 	int y = ui->layout_y;
-	char *buf = r_str_newf ("[ %s ]", label);
+	char *buf = r_str_newf ("%s[ %s ]%s", ui->theme.button_color ? ui->theme.checkbox_color : Color_RESET, label, Color_RESET);
 	if (buf) {
 		r_cons_canvas_gotoxy (ui->can, x, y);
 		r_cons_canvas_write (ui->can, buf);

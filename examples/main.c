@@ -6,6 +6,8 @@ static bool checked = false;
 static void main_run(RCore *core) {
 	R2UI *ui = r2ui_new (core->cons);
 	ui->theme.frame_color = Color_RED;
+	ui->theme.checkbox_color = Color_YELLOW;
+	ui->theme.button_color = Color_BLUE;
 	if (!ui) {
 		return;
 	}
