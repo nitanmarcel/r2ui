@@ -88,6 +88,10 @@ R2UI_API bool r2ui_key_pressed(R2UI *ui, int key) {
 	return ui && ui->last_key == key;
 }
 
+R2UI_API int r2ui_widget_y(R2UI *ui) {
+	return ui ? ui->widget_y : 0;
+}
+
 R2UI_API void r2ui_stop(R2UI *ui) {
 	if (ui) {
 		ui->running = false;

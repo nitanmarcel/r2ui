@@ -36,6 +36,10 @@ R2UI_API void r2ui_menu_bar_end(R2UI *ui);
 R2UI_API void r2ui_menu_render(R2UI *ui);
 R2UI_API void r2ui_box_begin(R2UI *ui);
 R2UI_API void r2ui_box_end(R2UI *ui);
+R2UI_API int r2ui_widget_y(R2UI *ui);
+R2UI_API void r2ui_refline_begin(R2UI *ui, int cols);
+R2UI_API void r2ui_refline(R2UI *ui, int y1, int y2);
+R2UI_API void r2ui_refline_end(R2UI *ui);
 R2UI_API void r2ui_stop(R2UI *ui);
 
 #endif

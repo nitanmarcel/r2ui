@@ -6,6 +6,7 @@ R2UI_API bool r2ui_radio_button(R2UI *ui, const char *label, int *value, int opt
 	}
 	int x = ui->layout_x;
 	int y = ui->layout_y;
+	ui->widget_y = y;
 	char *buf = r_str_newf ("%s(%c) %s%s", ui->theme.radio_button_color ? ui->theme.radio_button_color : Color_RESET, *value == option ? '*' : ' ', label, Color_RESET);
 	if (buf) {
 		r_cons_canvas_gotoxy (ui->can, x, y);

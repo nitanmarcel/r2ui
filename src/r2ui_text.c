@@ -5,6 +5,7 @@ R2UI_API void r2ui_text(R2UI *ui, const char *fmt, ...) {
 	if (!ui || !ui->can || !fmt) {
 		return;
 	}
+	ui->widget_y = ui->layout_y;
 	va_list ap;
 	va_start (ap, fmt);
 	char *buf = r_str_newvf (fmt, ap);

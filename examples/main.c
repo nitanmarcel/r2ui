@@ -19,6 +19,7 @@ static void main_run(RCore *core) {
 	ui->theme.tab_bar_color = Color_CYAN;
 	ui->theme.menu_bar_color = Color_BLUE;
 	ui->theme.box_color = Color_YELLOW;
+	ui->theme.refline_color = Color_GREEN;
 	if (!ui) {
 		return;
 	}
@@ -73,6 +74,21 @@ static void main_run(RCore *core) {
 			}
 			r2ui_tab_bar_end (ui);
 		}
+		r2ui_separator (ui);
+		r2ui_refline_begin (ui, 2);
+		r2ui_text (ui, "0x08048000  mov eax, 1");
+		int y_jmp = r2ui_widget_y (ui);
+		r2ui_text (ui, "0x08048005  cmp eax, 0");
+		r2ui_text (ui, "0x08048008  je 0x08048020");
+		int y_src = r2ui_widget_y (ui);
+		r2ui_text (ui, "0x0804800d  call printf");
+		r2ui_text (ui, "0x08048012  jmp 0x08048000");
+		int y_back = r2ui_widget_y (ui);
+		r2ui_text (ui, "0x08048020  xor eax, eax");
+		int y_dst = r2ui_widget_y (ui);
+		r2ui_refline (ui, y_src, y_dst);
+		r2ui_refline (ui, y_back, y_jmp);
+		r2ui_refline_end (ui);
 		r2ui_separator (ui);
 		if (r2ui_button (ui, "Quit")) {
 			r2ui_stop (ui);

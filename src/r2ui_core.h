@@ -15,6 +15,7 @@ typedef struct r2ui_theme_t {
 	const char *tab_bar_color;
 	const char *menu_bar_color;
 	const char *box_color;
+	const char *refline_color;
 } R2UITheme;
 
 typedef struct r2ui_t {
@@ -42,6 +43,10 @@ typedef struct r2ui_t {
 	bool menu_any_interact;
 	int box_x;
 	int box_y;
+	int widget_y;
+	int line_base_x;
+	int line_cols;
+	int line_next_col;
 	bool running;
 	R2UITheme theme;
 } R2UI;

@@ -8,6 +8,7 @@ R2UI_API void r2ui_progress_bar(R2UI *ui, float fraction) {
 	if (fraction > 1.0f) fraction = 1.0f;
 	int x = ui->layout_x;
 	int y = ui->layout_y;
+	ui->widget_y = y;
 	int bar_w = ui->tw - 2 - x;
 	if (bar_w < 4) {
 		bar_w = 4;
