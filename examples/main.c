@@ -17,12 +17,30 @@ static void main_run(RCore *core) {
 	ui->theme.selectable_color = Color_CYAN;
 	ui->theme.progress_bar_color = Color_MAGENTA;
 	ui->theme.tab_bar_color = Color_CYAN;
+	ui->theme.menu_bar_color = Color_BLUE;
 	if (!ui) {
 		return;
 	}
 
 
 	while (r2ui_begin (ui)) {
+		if (r2ui_menu_bar_begin (ui)) {
+			if (r2ui_menu_begin (ui, "File")) {
+				if (r2ui_menu_item (ui, "Open")) {
+				}
+				r2ui_menu_separator (ui);
+				if (r2ui_menu_item (ui, "Quit")) {
+					r2ui_stop (ui);
+				}
+				r2ui_menu_end (ui);
+			}
+			if (r2ui_menu_begin (ui, "Help")) {
+				if (r2ui_menu_item (ui, "About")) {
+				}
+				r2ui_menu_end (ui);
+			}
+			r2ui_menu_bar_end (ui);
+		}
 		r2ui_text (ui, Color_GREEN "Hello from r2ui!" Color_RESET);
 		r2ui_separator (ui);
 		r2ui_checkbox (ui, "Checkbox", &checked);

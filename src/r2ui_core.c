@@ -10,6 +10,7 @@ R2UI_API R2UI *r2ui_new(RCons *cons) {
 	}
 	ui->cons = cons;
 	ui->running = true;
+	ui->menu_open = -1;
 	r_cons_enable_mouse (cons, true);
 	return ui;
 }
@@ -75,6 +76,7 @@ R2UI_API void r2ui_end(R2UI *ui) {
 		return;
 	}
 
+	r2ui_menu_render (ui);
 	r_cons_clear00 (ui->cons);
 	r_cons_canvas_print (ui->can);
 	r_cons_flush (ui->cons);

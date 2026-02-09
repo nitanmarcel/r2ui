@@ -9,5 +9,5 @@
 - [x] ProgressBar
 - [ ] Panels
 - [ ] Line / Arrow
-- [ ] MenuBar / MenuItem
+- [x] MenuBar / MenuItem
 - [ ] Theming
