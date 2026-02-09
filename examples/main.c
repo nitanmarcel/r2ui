@@ -18,6 +18,7 @@ static void main_run(RCore *core) {
 	ui->theme.progress_bar_color = Color_MAGENTA;
 	ui->theme.tab_bar_color = Color_CYAN;
 	ui->theme.menu_bar_color = Color_BLUE;
+	ui->theme.box_color = Color_YELLOW;
 	if (!ui) {
 		return;
 	}
@@ -43,10 +44,12 @@ static void main_run(RCore *core) {
 		}
 		r2ui_text (ui, Color_GREEN "Hello from r2ui!" Color_RESET);
 		r2ui_separator (ui);
+		r2ui_box_begin (ui);
 		r2ui_checkbox (ui, "Checkbox", &checked);
 		r2ui_radio_button (ui, "Option A", &choice, 0);
 		r2ui_radio_button (ui, "Option B", &choice, 1);
 		r2ui_radio_button (ui, "Option C", &choice, 2);
+		r2ui_box_end (ui);
 		r2ui_separator (ui);
 		if (r2ui_selectable (ui, "Selectable", selected)) {
 			selected = !selected;

@@ -24,8 +24,7 @@ R2UI_API bool r2ui_menu_begin(R2UI *ui, const char *label) {
 	bool is_open = (ui->menu_open == my_idx);
 	char *buf;
 	if (is_open) {
-		const char *color = ui->theme.menu_bar_color ? ui->theme.menu_bar_color : Color_INVERT;
-		buf = r_str_newf ("%s[%s]%s", color, label, Color_RESET);
+		buf = r_str_newf ("%s[%s]%s", ui->theme.menu_bar_color ? ui->theme.menu_bar_color : Color_RESET, label, Color_RESET);
 	} else {
 		buf = r_str_newf (" %s ", label);
 	}
@@ -62,8 +61,8 @@ R2UI_API bool r2ui_menu_item(R2UI *ui, const char *label) {
 		return false;
 	}
 	int idx = ui->menu_drop_count;
-	int item_y = ui->menu_drop_y + idx;
-	int item_x = ui->menu_drop_x;
+	int item_y = ui->menu_drop_y + 1 + idx;
+	int item_x = ui->menu_drop_x + 1;
 	int len = strlen (label);
 	if (len > ui->menu_drop_max_w) {
 		ui->menu_drop_max_w = len;
@@ -109,6 +108,11 @@ R2UI_API void r2ui_menu_render(R2UI *ui) {
 		return;
 	}
 
+	int box_w = pad_w + 2;
+	int box_h = ui->menu_drop_count + 2;
+	r_cons_canvas_fill (ui->can, ui->menu_drop_x, ui->menu_drop_y, box_w, box_h, ' ');
+
+	const char *color = ui->theme.menu_bar_color ? ui->theme.menu_bar_color : Color_RESET;
 	int i;
 	for (i = 0; i < ui->menu_drop_count; i++) {
 		const char *label = ui->menu_drop_items[i];
@@ -122,12 +126,13 @@ R2UI_API void r2ui_menu_render(R2UI *ui) {
 			}
 			pad[pad_w] = '\0';
 		}
-		char *buf = r_str_newf ("%s%s%s", ui->theme.menu_bar_color ? ui->theme.menu_bar_color : Color_INVERT, pad, Color_RESET);
+		char *buf = r_str_newf ("%s%s%s", color, pad, Color_RESET);
 		if (buf) {
-			r_cons_canvas_gotoxy (ui->can, ui->menu_drop_x, ui->menu_drop_y + i);
+			r_cons_canvas_gotoxy (ui->can, ui->menu_drop_x + 1, ui->menu_drop_y + 1 + i);
 			r_cons_canvas_write (ui->can, buf);
 			free (buf);
 		}
 	}
+	r_cons_canvas_box (ui->can, ui->menu_drop_x, ui->menu_drop_y, box_w, box_h, ui->theme.menu_bar_color);
 	free (pad);
 }

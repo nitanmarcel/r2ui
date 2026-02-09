@@ -14,6 +14,7 @@ typedef struct r2ui_theme_t {
 	const char *progress_bar_color;
 	const char *tab_bar_color;
 	const char *menu_bar_color;
+	const char *box_color;
 } R2UITheme;
 
 typedef struct r2ui_t {
@@ -39,6 +40,8 @@ typedef struct r2ui_t {
 	int menu_drop_max_w;
 	const char *menu_drop_items[R2UI_MENU_MAX_ITEMS];
 	bool menu_any_interact;
+	int box_x;
+	int box_y;
 	bool running;
 	R2UITheme theme;
 } R2UI;
