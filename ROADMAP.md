@@ -6,8 +6,8 @@
 - [x] Checkbox
 - [x] RadioButton
 - [ ] TabBar / TabItem
-- [ ] Table / Columns
 - [ ] ProgressBar
+- [ ] Panels
 - [ ] Line / Arrow
 - [ ] MenuBar / MenuItem
 - [ ] Theming
