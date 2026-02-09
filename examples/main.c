@@ -3,7 +3,7 @@
 
 static void main_run(RCore *core) {
 	R2UI *ui = r2ui_new (core->cons);
-	ui->frame_color = Color_RED;
+	ui->theme.frame_color = Color_RED;
 	if (!ui) {
 		return;
 	}

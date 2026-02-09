@@ -3,6 +3,10 @@
 
 #include <r_cons.h>
 
+typedef struct r2ui_theme_t {
+	const char *frame_color;
+} R2UITheme;
+
 typedef struct r2ui_t {
 	RCons *cons;
 	RConsCanvas *can;
@@ -12,7 +16,7 @@ typedef struct r2ui_t {
 	int layout_x;
 	int layout_y;
 	bool running;
-	const char *frame_color;
+	R2UITheme theme;
 } R2UI;
 
 #endif
