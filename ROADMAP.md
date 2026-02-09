@@ -1,5 +1,5 @@
 - [x] Text
-- [ ] Separator
+- [x] Separator
 - [ ] InputText
 - [ ] Button
 - [ ] Selectable
