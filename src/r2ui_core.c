@@ -37,9 +37,13 @@ R2UI_API bool r2ui_begin(R2UI *ui) {
 	
 	ui->click_x = -1;
 	ui->click_y = -1;
-	r_cons_get_click (ui->cons, &ui->click_x, &ui->click_y);
-	if (ui->click_x > 0) ui->click_x--;
-	if (ui->click_y > 0) ui->click_y--;
+	int cx, cy;
+	if (r_cons_get_click (ui->cons, &cx, &cy)) {
+		if (cx > 0) cx--;
+		if (cy > 0) cy--;
+		ui->click_x = cx;
+		ui->click_y = cy;
+	}
 
 	ui->th = 0;
 	ui->tw = r_cons_get_size (ui->cons, &ui->th);

@@ -20,6 +20,7 @@ R2UI_API bool r2ui_key_pressed(R2UI *ui, int key);
 R2UI_API void r2ui_text(R2UI *ui, const char *fmt, ...);
 R2UI_API void r2ui_separator(R2UI *ui);
 R2UI_API bool r2ui_button(R2UI *ui, const char *label);
+R2UI_API bool r2ui_checkbox(R2UI *ui, const char *label, bool *checked);
 R2UI_API void r2ui_stop(R2UI *ui);
 
 #endif

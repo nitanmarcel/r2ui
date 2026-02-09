@@ -1,6 +1,8 @@
 #include <r_core.h>
 #include "r2ui.h"
 
+static bool checked = false;
+
 static void main_run(RCore *core) {
 	R2UI *ui = r2ui_new (core->cons);
 	ui->theme.frame_color = Color_RED;
@@ -8,8 +10,11 @@ static void main_run(RCore *core) {
 		return;
 	}
 
+
 	while (r2ui_begin (ui)) {
 		r2ui_text (ui, Color_GREEN "Hello from r2ui!" Color_RESET);
+		r2ui_separator (ui);
+		r2ui_checkbox (ui, "Checkbox", &checked);
 		r2ui_separator (ui);
 		if (r2ui_button (ui, "Quit")) {
 			r2ui_stop (ui);

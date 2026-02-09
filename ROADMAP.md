@@ -4,7 +4,7 @@
 - [x] Button
 - [ ] Selectable
 - [ ] ListBox
-- [ ] Checkbox
+- [x] Checkbox
 - [ ] RadioButton
 - [ ] TabBar / TabItem
 - [ ] TreeNode
