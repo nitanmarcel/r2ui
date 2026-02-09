@@ -2,7 +2,7 @@
 - [x] Separator
 - [ ] InputText
 - [x] Button
-- [ ] Selectable
+- [x] Selectable
 - [x] Checkbox
 - [x] RadioButton
 - [ ] TabBar / TabItem

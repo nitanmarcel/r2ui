@@ -22,6 +22,7 @@ R2UI_API void r2ui_separator(R2UI *ui);
 R2UI_API bool r2ui_button(R2UI *ui, const char *label);
 R2UI_API bool r2ui_checkbox(R2UI *ui, const char *label, bool *checked);
 R2UI_API bool r2ui_radio_button(R2UI *ui, const char *label, int *value, int option);
+R2UI_API bool r2ui_selectable(R2UI *ui, const char *label, bool selected);
 R2UI_API void r2ui_stop(R2UI *ui);
 
 #endif

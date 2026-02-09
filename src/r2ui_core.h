@@ -8,6 +8,7 @@ typedef struct r2ui_theme_t {
 	const char *button_color;
 	const char *checkbox_color;
 	const char *radio_button_color;
+	const char *selectable_color;
 } R2UITheme;
 
 typedef struct r2ui_t {
