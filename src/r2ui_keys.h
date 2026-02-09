@@ -1,0 +1,137 @@
+#ifndef R2UI_KEYS_H
+#define R2UI_KEYS_H
+
+#define R2UI_KEY_NONE       -1
+
+#define R2UI_KEY_CTRL_A      1
+#define R2UI_KEY_CTRL_B      2
+#define R2UI_KEY_CTRL_C      3
+#define R2UI_KEY_CTRL_D      4
+#define R2UI_KEY_CTRL_E      5
+#define R2UI_KEY_CTRL_F      6
+#define R2UI_KEY_CTRL_G      7
+#define R2UI_KEY_BACKSPACE2  8
+#define R2UI_KEY_TAB         9
+#define R2UI_KEY_CTRL_J     10
+#define R2UI_KEY_CTRL_K     11
+#define R2UI_KEY_CTRL_L     12
+#define R2UI_KEY_ENTER      13
+#define R2UI_KEY_CTRL_N     14
+#define R2UI_KEY_CTRL_O     15
+#define R2UI_KEY_CTRL_P     16
+#define R2UI_KEY_CTRL_Q     17
+#define R2UI_KEY_CTRL_R     18
+#define R2UI_KEY_CTRL_S     19
+#define R2UI_KEY_CTRL_T     20
+#define R2UI_KEY_CTRL_U     21
+#define R2UI_KEY_CTRL_V     22
+#define R2UI_KEY_CTRL_W     23
+#define R2UI_KEY_CTRL_X     24
+#define R2UI_KEY_CTRL_Y     25
+#define R2UI_KEY_CTRL_Z     26
+#define R2UI_KEY_ESC        27
+
+#define R2UI_KEY_SPACE      32
+#define R2UI_KEY_EXCLAIM    33
+#define R2UI_KEY_DQUOTE     34
+#define R2UI_KEY_HASH       35
+#define R2UI_KEY_DOLLAR     36
+#define R2UI_KEY_PERCENT    37
+#define R2UI_KEY_AMPERSAND  38
+#define R2UI_KEY_SQUOTE     39
+#define R2UI_KEY_LPAREN     40
+#define R2UI_KEY_RPAREN     41
+#define R2UI_KEY_ASTERISK   42
+#define R2UI_KEY_PLUS       43
+#define R2UI_KEY_COMMA      44
+#define R2UI_KEY_MINUS      45
+#define R2UI_KEY_DOT        46
+#define R2UI_KEY_SLASH      47
+
+#define R2UI_KEY_0          48
+#define R2UI_KEY_1          49
+#define R2UI_KEY_2          50
+#define R2UI_KEY_3          51
+#define R2UI_KEY_4          52
+#define R2UI_KEY_5          53
+#define R2UI_KEY_6          54
+#define R2UI_KEY_7          55
+#define R2UI_KEY_8          56
+#define R2UI_KEY_9          57
+
+#define R2UI_KEY_COLON      58
+#define R2UI_KEY_SEMICOLON  59
+#define R2UI_KEY_LESS       60
+#define R2UI_KEY_EQUALS     61
+#define R2UI_KEY_GREATER    62
+#define R2UI_KEY_QUESTION   63
+#define R2UI_KEY_AT         64
+
+#define R2UI_KEY_A          65
+#define R2UI_KEY_B          66
+#define R2UI_KEY_C          67
+#define R2UI_KEY_D          68
+#define R2UI_KEY_E          69
+#define R2UI_KEY_F          70
+#define R2UI_KEY_G          71
+#define R2UI_KEY_H          72
+#define R2UI_KEY_I          73
+#define R2UI_KEY_J          74
+#define R2UI_KEY_K          75
+#define R2UI_KEY_L          76
+#define R2UI_KEY_M          77
+#define R2UI_KEY_N          78
+#define R2UI_KEY_O          79
+#define R2UI_KEY_P          80
+#define R2UI_KEY_Q          81
+#define R2UI_KEY_R          82
+#define R2UI_KEY_S          83
+#define R2UI_KEY_T          84
+#define R2UI_KEY_U          85
+#define R2UI_KEY_V          86
+#define R2UI_KEY_W          87
+#define R2UI_KEY_X          88
+#define R2UI_KEY_Y          89
+#define R2UI_KEY_Z          90
+
+#define R2UI_KEY_LBRACKET   91
+#define R2UI_KEY_BACKSLASH  92
+#define R2UI_KEY_RBRACKET   93
+#define R2UI_KEY_CARET      94
+#define R2UI_KEY_UNDERSCORE 95
+#define R2UI_KEY_BACKTICK   96
+
+#define R2UI_KEY_a          97
+#define R2UI_KEY_b          98
+#define R2UI_KEY_c          99
+#define R2UI_KEY_d         100
+#define R2UI_KEY_e         101
+#define R2UI_KEY_f         102
+#define R2UI_KEY_g         103
+#define R2UI_KEY_h         104
+#define R2UI_KEY_i         105
+#define R2UI_KEY_j         106
+#define R2UI_KEY_k         107
+#define R2UI_KEY_l         108
+#define R2UI_KEY_m         109
+#define R2UI_KEY_n         110
+#define R2UI_KEY_o         111
+#define R2UI_KEY_p         112
+#define R2UI_KEY_q         113
+#define R2UI_KEY_r         114
+#define R2UI_KEY_s         115
+#define R2UI_KEY_t         116
+#define R2UI_KEY_u         117
+#define R2UI_KEY_v         118
+#define R2UI_KEY_w         119
+#define R2UI_KEY_x         120
+#define R2UI_KEY_y         121
+#define R2UI_KEY_z         122
+
+#define R2UI_KEY_LBRACE    123
+#define R2UI_KEY_PIPE      124
+#define R2UI_KEY_RBRACE    125
+#define R2UI_KEY_TILDE     126
+#define R2UI_KEY_BACKSPACE 127
+
+#endif

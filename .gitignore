@@ -1,0 +1,9 @@
+src/*.o
+libr2ui.a
+examples/*.so
+*.dSYM/
+core
+core.*
+*~
+*.swp
+.DS_Store
