@@ -106,6 +106,7 @@ R2UI_API bool r2ui_input_text(R2UI *ui, const char *label, char *buf, int buf_si
 		free (end);
 	}
 
+	ui->widget_w = label_len + 2 + 1 + field_w + 1;
 	ui->layout_y++;
 	return changed;
 }

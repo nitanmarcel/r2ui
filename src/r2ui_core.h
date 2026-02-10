@@ -50,6 +50,7 @@ typedef struct r2ui_t {
 	int box_x;
 	int box_y;
 	int widget_y;
+	int widget_w;
 	int line_base_x;
 	int line_cols;
 	int line_next_col;

@@ -31,5 +31,6 @@ R2UI_API void r2ui_progress_bar(R2UI *ui, float fraction) {
 			free (colored);
 		}
 	}
+	ui->widget_w = bar_w;
 	ui->layout_y++;
 }

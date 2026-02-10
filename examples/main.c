@@ -96,9 +96,18 @@ static void main_run(RCore *core) {
 		r2ui_input_text (ui, "Input", input_text, sizeof (input_text));
 		r2ui_text (ui, "You typed: %s", input_text);
 		r2ui_separator (ui);
+		r2ui_text (ui, "Left");
+		r2ui_same_line (ui);
+		r2ui_text (ui, "Middle");
+		r2ui_same_line (ui);
+		r2ui_text (ui, "Right");
+		r2ui_set_cursor (ui, 1, -1);
+		r2ui_separator (ui);
 		if (r2ui_button (ui, "Quit")) {
 			r2ui_stop (ui);
 		}
+		r2ui_set_y_bottom (ui, 2);
+		r2ui_text (ui, "Bottom");
 		switch (r2ui_get_key (ui)) {
 		case R2UI_KEY_ESC:
 		case R2UI_KEY_Q:

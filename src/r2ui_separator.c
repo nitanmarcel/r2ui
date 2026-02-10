@@ -5,6 +5,8 @@ R2UI_API void r2ui_separator(R2UI *ui) {
 		return;
 	}
 	ui->widget_y = ui->layout_y;
-	r_cons_canvas_fill (ui->can, ui->layout_x, ui->layout_y, ui->tw - 2, 1, '-');
+	int w = ui->tw - 2;
+	r_cons_canvas_fill (ui->can, ui->layout_x, ui->layout_y, w, 1, '-');
+	ui->widget_w = w;
 	ui->layout_y++;
 }

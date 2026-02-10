@@ -13,6 +13,7 @@ R2UI_API void r2ui_text(R2UI *ui, const char *fmt, ...) {
 	if (buf) {
 		r_cons_canvas_gotoxy (ui->can, ui->layout_x, ui->layout_y);
 		r_cons_canvas_write (ui->can, buf);
+		ui->widget_w = r_str_ansi_len (buf);
 		free (buf);
 	}
 	ui->layout_y++;

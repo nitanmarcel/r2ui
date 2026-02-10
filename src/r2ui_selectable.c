@@ -12,6 +12,7 @@ R2UI_API bool r2ui_selectable(R2UI *ui, const char *label, bool selected) {
 		r_cons_canvas_gotoxy (ui->can, x, y);
 		r_cons_canvas_write (ui->can, buf);
 		int len = strlen (label);
+		ui->widget_w = len;
 		free (buf);
 		ui->layout_y++;
 		return ui->click_y == y

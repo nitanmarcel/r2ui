@@ -46,6 +46,12 @@ R2UI_API int r2ui_widget_y(R2UI *ui);
 R2UI_API void r2ui_refline_begin(R2UI *ui, int cols);
 R2UI_API void r2ui_refline(R2UI *ui, int y1, int y2);
 R2UI_API void r2ui_refline_end(R2UI *ui);
+R2UI_API void r2ui_spacing(R2UI *ui, int n);
+R2UI_API void r2ui_indent(R2UI *ui, int n);
+R2UI_API void r2ui_unindent(R2UI *ui, int n);
+R2UI_API void r2ui_set_cursor(R2UI *ui, int x, int y);
+R2UI_API void r2ui_set_y_bottom(R2UI *ui, int offset);
+R2UI_API void r2ui_same_line(R2UI *ui);
 R2UI_API void r2ui_stop(R2UI *ui);
 
 #endif

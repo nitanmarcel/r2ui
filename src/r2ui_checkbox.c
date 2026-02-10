@@ -12,6 +12,7 @@ R2UI_API bool r2ui_checkbox(R2UI *ui, const char *label, bool *checked) {
 		r_cons_canvas_gotoxy (ui->can, x, y);
 		r_cons_canvas_write (ui->can, buf);
 		int len = strlen (label) + 4;
+		ui->widget_w = len;
 		free (buf);
 		ui->layout_y++;
 		if (ui->click_y == y && ui->click_x >= x && ui->click_x < x + len) {

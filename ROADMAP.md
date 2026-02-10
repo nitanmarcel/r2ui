@@ -10,5 +10,5 @@
 - [x] Refline
 - [x] MenuBar / MenuItem
 - [ ] Panels
-- [ ] Layouts
+- [x] Layouts
 - [ ] Theming
