@@ -8,6 +8,7 @@ static int choice = 0;
 static bool selected = false;
 static float progress = 0.0f;
 static int tab = 0;
+static char input_text[1024] = "";
 
 static void main_run(RCore *core) {
 	R2UI *ui = r2ui_new (core->cons);
@@ -21,6 +22,7 @@ static void main_run(RCore *core) {
 	ui->theme.menu_bar_color = Color_BLUE;
 	ui->theme.box_color = Color_YELLOW;
 	ui->theme.refline_color = Color_GREEN;
+	ui->theme.input_text_color = Color_CYAN;
 	if (!ui) {
 		return;
 	}
@@ -90,6 +92,9 @@ static void main_run(RCore *core) {
 		r2ui_refline (ui, y_src, y_dst);
 		r2ui_refline (ui, y_back, y_jmp);
 		r2ui_refline_end (ui);
+		r2ui_separator (ui);
+		r2ui_input_text (ui, "Input", input_text, sizeof (input_text));
+		r2ui_text (ui, "You typed: %s", input_text);
 		r2ui_separator (ui);
 		if (r2ui_button (ui, "Quit")) {
 			r2ui_stop (ui);

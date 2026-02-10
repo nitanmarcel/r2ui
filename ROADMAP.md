@@ -1,6 +1,6 @@
 - [x] Text
 - [x] Separator
-- [ ] InputText
+- [x] InputText
 - [x] Button
 - [x] Selectable
 - [x] Checkbox

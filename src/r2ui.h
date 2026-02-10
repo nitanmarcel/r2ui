@@ -22,6 +22,7 @@ R2UI_API bool r2ui_nav_up(R2UI *ui);
 R2UI_API bool r2ui_nav_down(R2UI *ui);
 R2UI_API bool r2ui_nav_left(R2UI *ui);
 R2UI_API bool r2ui_nav_right(R2UI *ui);
+R2UI_API bool r2ui_input_text(R2UI *ui, const char *label, char *buf, int buf_size);
 R2UI_API void r2ui_text(R2UI *ui, const char *fmt, ...);
 R2UI_API void r2ui_separator(R2UI *ui);
 R2UI_API bool r2ui_button(R2UI *ui, const char *label);

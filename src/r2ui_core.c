@@ -73,6 +73,10 @@ R2UI_API bool r2ui_begin(R2UI *ui) {
 		ui->click_y = cy;
 	}
 
+	if (ui->click_x >= 0 && ui->click_y >= 0) {
+		ui->input_active = NULL;
+	}
+
 	ui->th = 0;
 	ui->tw = r_cons_get_size (ui->cons, &ui->th);
 	if (ui->tw < 10) {
@@ -112,7 +116,7 @@ R2UI_API void r2ui_end(R2UI *ui) {
 }
 
 R2UI_API int r2ui_get_key(R2UI *ui) {
-	return ui ? ui->event.key : R2UI_KEY_NONE;
+	return (ui && !ui->input_active) ? ui->event.key : R2UI_KEY_NONE;
 }
 
 R2UI_API int r2ui_key_char(R2UI *ui) {
