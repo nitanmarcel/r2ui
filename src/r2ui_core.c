@@ -28,13 +28,40 @@ R2UI_API bool r2ui_begin(R2UI *ui) {
 		return false;
 	}
 
-	int key = r_cons_readchar_timeout (ui->cons, 50);
-	
-	if (key != -1) {
-		key = r_cons_arrow_to_hjkl (ui->cons, key);
-	}
+	int raw = r_cons_readchar_timeout (ui->cons, 50);
+	ui->event.key = R2UI_KEY_NONE;
+	ui->event.ch = 0;
 
-	ui->last_key = key;
+	if (raw != -1) {
+		if (raw == 0x1b) {
+			int next = r_cons_readchar_timeout (ui->cons, 5);
+			if (next == -1) {
+				ui->event.key = R2UI_KEY_ESC;
+			} else {
+				char nb = (char)next;
+				r_cons_readpush (ui->cons, &nb, 1);
+				int mapped = r_cons_arrow_to_hjkl (ui->cons, raw);
+				switch (mapped) {
+				case 'k': ui->event.key = R2UI_KEY_UP; break;
+				case 'j': ui->event.key = R2UI_KEY_DOWN; break;
+				case 'h': ui->event.key = R2UI_KEY_LEFT; break;
+				case 'l': ui->event.key = R2UI_KEY_RIGHT; break;
+				case 27:  ui->event.key = R2UI_KEY_ESC; break;
+				default:
+					if (mapped >= 0xf1 && mapped <= 0xfc) {
+						ui->event.key = R2UI_KEY_F1 + (mapped - 0xf1);
+					} else {
+						ui->event.key = mapped;
+					}
+				}
+			}
+		} else if (raw >= 32 && raw <= 126) {
+			ui->event.key = raw;
+			ui->event.ch = raw;
+		} else {
+			ui->event.key = raw;
+		}
+	}
 	
 	ui->click_x = -1;
 	ui->click_y = -1;
@@ -84,8 +111,28 @@ R2UI_API void r2ui_end(R2UI *ui) {
 	ui->can = NULL;
 }
 
-R2UI_API bool r2ui_key_pressed(R2UI *ui, int key) {
-	return ui && ui->last_key == key;
+R2UI_API int r2ui_get_key(R2UI *ui) {
+	return ui ? ui->event.key : R2UI_KEY_NONE;
+}
+
+R2UI_API int r2ui_key_char(R2UI *ui) {
+	return ui ? ui->event.ch : 0;
+}
+
+R2UI_API bool r2ui_nav_up(R2UI *ui) {
+	return ui && (ui->event.key == R2UI_KEY_UP || ui->event.key == R2UI_KEY_k);
+}
+
+R2UI_API bool r2ui_nav_down(R2UI *ui) {
+	return ui && (ui->event.key == R2UI_KEY_DOWN || ui->event.key == R2UI_KEY_j);
+}
+
+R2UI_API bool r2ui_nav_left(R2UI *ui) {
+	return ui && (ui->event.key == R2UI_KEY_LEFT || ui->event.key == R2UI_KEY_h);
+}
+
+R2UI_API bool r2ui_nav_right(R2UI *ui) {
+	return ui && (ui->event.key == R2UI_KEY_RIGHT || ui->event.key == R2UI_KEY_l);
 }
 
 R2UI_API int r2ui_widget_y(R2UI *ui) {

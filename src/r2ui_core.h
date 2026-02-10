@@ -5,6 +5,11 @@
 
 #define R2UI_MENU_MAX_ITEMS 32
 
+typedef struct r2ui_key_event_t {
+	int key;
+	int ch;
+} R2UIKeyEvent;
+
 typedef struct r2ui_theme_t {
 	const char *frame_color;
 	const char *button_color;
@@ -23,7 +28,7 @@ typedef struct r2ui_t {
 	RConsCanvas *can;
 	int tw;
 	int th;
-	int last_key;
+	R2UIKeyEvent event;
 	int layout_x;
 	int layout_y;
 	int click_x;

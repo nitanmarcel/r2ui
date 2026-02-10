@@ -134,4 +134,27 @@
 #define R2UI_KEY_TILDE     126
 #define R2UI_KEY_BACKSPACE 127
 
+#define R2UI_KEY_UP       0x100
+#define R2UI_KEY_DOWN     0x101
+#define R2UI_KEY_LEFT     0x102
+#define R2UI_KEY_RIGHT    0x103
+#define R2UI_KEY_HOME     0x104
+#define R2UI_KEY_END      0x105
+#define R2UI_KEY_PGUP     0x106
+#define R2UI_KEY_PGDN     0x107
+#define R2UI_KEY_DELETE    0x108
+
+#define R2UI_KEY_F1       0x110
+#define R2UI_KEY_F2       0x111
+#define R2UI_KEY_F3       0x112
+#define R2UI_KEY_F4       0x113
+#define R2UI_KEY_F5       0x114
+#define R2UI_KEY_F6       0x115
+#define R2UI_KEY_F7       0x116
+#define R2UI_KEY_F8       0x117
+#define R2UI_KEY_F9       0x118
+#define R2UI_KEY_F10      0x119
+#define R2UI_KEY_F11      0x11a
+#define R2UI_KEY_F12      0x11b
+
 #endif

@@ -1,6 +1,7 @@
 #include <r_core.h>
 #include <stdbool.h>
 #include "r2ui.h"
+#include "r2ui_keys.h"
 
 static bool checked = false;
 static int choice = 0;
@@ -93,8 +94,12 @@ static void main_run(RCore *core) {
 		if (r2ui_button (ui, "Quit")) {
 			r2ui_stop (ui);
 		}
-		if (r2ui_key_pressed (ui, R2UI_KEY_CTRL_C) || r2ui_key_pressed (ui, R2UI_KEY_Q)) {
+		switch (r2ui_get_key (ui)) {
+		case R2UI_KEY_ESC:
+		case R2UI_KEY_Q:
+		case R2UI_KEY_q:
 			r2ui_stop (ui);
+			break;
 		}
 		r2ui_end (ui);
 	}
